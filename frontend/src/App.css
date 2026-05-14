@@ -1,0 +1,276 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: #18222f;
+  background:
+    radial-gradient(circle at top left, rgba(21, 119, 118, 0.18), transparent 32rem),
+    linear-gradient(135deg, #f5f1e8 0%, #eaf3ef 52%, #eef1f8 100%);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid rgba(43, 123, 110, 0.28);
+  outline-offset: 2px;
+}
+
+.app-shell {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 56px 18px;
+}
+
+.auth-shell {
+  align-items: center;
+}
+
+.task-panel,
+.auth-panel {
+  width: min(100%, 720px);
+  border: 1px solid rgba(24, 34, 47, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 24px 70px rgba(36, 58, 66, 0.16);
+}
+
+.task-panel {
+  padding: 28px;
+}
+
+.auth-panel {
+  max-width: 430px;
+  padding: 34px;
+}
+
+.panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 26px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: #2b7b6e;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  margin: 0;
+  color: #17212c;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: clamp(2rem, 8vw, 2.8rem);
+}
+
+h2 {
+  font-size: 1.1rem;
+}
+
+.task-form,
+.auth-form {
+  display: grid;
+  gap: 12px;
+}
+
+.task-form {
+  grid-template-columns: 1fr auto;
+  margin-bottom: 28px;
+}
+
+.auth-form {
+  margin-top: 24px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid #cfddd8;
+  border-radius: 8px;
+  padding: 0 14px;
+  color: #18222f;
+  background: #fbfdfc;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #2b7b6e;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(43, 123, 110, 0.1);
+}
+
+.primary-button,
+.secondary-button,
+.text-button,
+.delete-button {
+  min-height: 44px;
+  border-radius: 8px;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+}
+
+.primary-button {
+  padding: 0 20px;
+  color: #ffffff;
+  background: #235f68;
+  box-shadow: 0 10px 22px rgba(35, 95, 104, 0.22);
+  font-weight: 800;
+}
+
+.primary-button:hover {
+  background: #1b5158;
+  transform: translateY(-1px);
+}
+
+.secondary-button {
+  padding: 0 16px;
+  color: #235f68;
+  background: #e4efeb;
+  font-weight: 700;
+}
+
+.secondary-button:hover {
+  background: #d6e8e2;
+}
+
+.text-button {
+  color: #235f68;
+  background: transparent;
+  font-weight: 700;
+}
+
+.text-button:hover {
+  background: #edf6f3;
+}
+
+.list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.list-header span {
+  color: #667584;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.task-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task-item,
+.empty-state {
+  min-height: 58px;
+  border: 1px solid #e1e8e5;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.task-item {
+  display: grid;
+  grid-template-columns: 24px 1fr 40px;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+}
+
+.task-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #2b7b6e;
+}
+
+.task-title {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: #22313d;
+  font-weight: 650;
+}
+
+.task-title.completed {
+  color: #8995a0;
+  text-decoration: line-through;
+}
+
+.delete-button {
+  width: 40px;
+  min-height: 40px;
+  color: #a23838;
+  background: #fff1f1;
+}
+
+.delete-button:hover {
+  color: #ffffff;
+  background: #b23b3b;
+}
+
+.empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  color: #667584;
+  font-weight: 700;
+}
+
+@media (max-width: 620px) {
+  .app-shell {
+    padding: 24px 12px;
+  }
+
+  .task-panel,
+  .auth-panel {
+    padding: 22px;
+  }
+
+  .panel-header,
+  .list-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .task-form {
+    grid-template-columns: 1fr;
+  }
+}
